@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      let not;
+      setTimeout(() => {
+        not = new Notification('test', {tag: 'abc'});
+        not.onclose = () => console.log("not closing");
+      }, 2000);
+
+      setTimeout(() => {
+        not.close();
+      }, 5000);
+    </script>
+  </body>
+</html>
